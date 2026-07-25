@@ -1,5 +1,5 @@
 import streamlit as st
-import components.sidebar as sidebar
+from components.sidebar import sidebar
 
 def configure():
     st.set_page_config(
@@ -20,12 +20,9 @@ def load_css():
             f"<style>{f.read()}</style>",
             unsafe_allow_html=True
     )
-    
-st.sidebar.success("Select a demo above.")
-
 
 if __name__ == '__main__':
 
     configure()
-    load_css()
+    #load_css()
     sidebar()
