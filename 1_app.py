@@ -60,7 +60,7 @@ if st.button('Predict'):
 
     isPred = ('Transaction is :green[Legitimate!]' if pred == 0 else 'Transaction is :red[Fraudulent!]')
 
-    st.subheader(f'Prediction: {int(pred)}')
+    st.subheader(f'Prediction: {isPred}')
 
     if pred == 1:
         st.error("🚨 This transaction is predicted to be :red[fraudulent].")
