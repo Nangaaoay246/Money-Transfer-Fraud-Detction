@@ -71,13 +71,22 @@ Accuracy is basically useless here (a model that predicts “:green[legitimate]�
 
 In short, this isn’t just about picking the “best” algorithm on paper. It’s about finding the model a bank could actually deploy, one that protects people’s money without flagging every legitimate :red[Kape Kuripot] run as a crime.
     """,
-    'modelEvaluation': """
+    'modelEvaluation_1': """
     With fraud at **~0.13%** of transactions, accuracy is not useful (predicting "not fraud" every time would score ~99.9%). Instead we prioritize:
 
 - **`Recall` (of the fraud class)** - Out of all real fraud cases, how many did we catch?
 - **`Precision` (of the fraud class)** - Out of everything we flagged as fraud, how many actually were?
 - **`F1-score`** - A single score that balances both Precision and Recall.
 - **`PR-AUC` (Average Precision)** - Measures overall model performance amidst heavy class imbalance
+
+**Precision-Recall Curve Comparison**
+    """,
+    'modelEvaluation_2':"""
+1. `Random Forest` is the clear winner, with a percision recall-curve of 0.947. It maintains high recall levels, catching allmost all fraudulent transaction without throwing many false alarms.
+2. `Descision Tree` performs decently wutg a PR-AUC of 0.74. In this graph, we can notice a sharp angular line which shows that it uses rigid bounderies when detecting fraudlent transactions, making it less refined than RF.
+    """,
+    'modelEvaluation_3':"""
+3. `Logistic Regression` performs the poorest with a percision recall curve of 0.572; its curve drops sharply early on. This affirms our earlier hypothesis during EDA that linear models struggle to speparate frad from non-fraud.
     """
 }
 

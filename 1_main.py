@@ -43,7 +43,15 @@ def businessObjective():
 
 def modelEvaluation():
     st.header('Evaluation Metrics',  divider='green')
-    st.markdown(page_content['modelEvaluation'])
+    st.markdown(page_content['modelEvaluation_1'])
+    #df
+    col_img1, col_text1 = st.columns([1, 2], vertical_alignment="center")
+    with col_img1:
+            st.image('assets/PRAUC.png', width='stretch')
+    with col_text1:
+        st.markdown(page_content['modelEvaluation_2'])
+    st.markdown(page_content['modelEvaluation_3'])
+
 
 def content():
     projectOverview()
