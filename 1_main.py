@@ -23,22 +23,28 @@ def projectOverview():
     st.markdown(page_content['ProjectOverview_1'])
     col_img1, col_text1 = st.columns([1, 2], vertical_alignment="center")
     with col_img1:
-        st.image('assets/Smiski-wallet.jpg', width='stretch', caption='My everyday wallet, whose net worth is about ₱150')
+        st.image('assets/Smiski-wallet.jpg', width='stretch', caption='My everyday wallet. Current balance: ₱150 and one bus ticket.')
     with col_text1:
         st.markdown(page_content['ProjectOverview_2'])
     col_text2, col_img2 = st.columns([2, 1], vertical_alignment="center")
     with col_img2:
-        st.image('assets/bank-transfer.jpg', width='stretch', caption='Ate QR nalang po plz')
+        st.image('assets/bank-transfer.jpg', width='stretch', caption="My e-wallet. ₱175 across MariBank and GCash (strategic diversification)")
     with col_text2:
         st.markdown(page_content['ProjectOverview_3'])
     st.markdown(page_content['projectOverview_4'])
 
 def problemStatement():
     st.header('Problem Statement',  divider='green')
+    st.markdown(page_content['problemStatement'])
+
+def businessObjective():
+    st.header('Business Objective',  divider='green')
+    st.markdown(page_content['businessObjective'])
 
 def content():
     projectOverview()
     problemStatement()
+    businessObjective()
     
 
 if __name__ == '__main__':

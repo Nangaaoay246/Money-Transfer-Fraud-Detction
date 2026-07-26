@@ -44,12 +44,32 @@ These days, I rarely carry cash whenever I leave the house. Maybe I’ll bring a
     'ProjectOverview_3': """ 
     ...But, that convenience comes with a catch.
 
-Behind every :blue[instant] :red[transfer] lies a massive financial pipeline that processes millions upon millions of transactions daily. As more Filipinos go digital, the surface area for fraud grows right alongside us. The very tech that makes paying for coffee effortless also gives scammers a platform to exploit a lot of people.
+Behind every :blue[**instant**] :red[**transfer**] lies a massive financial pipeline that processes millions upon millions of transactions daily. As more Filipinos go digital, the surface area for fraud grows right alongside us. The very tech that makes paying for coffee effortless also gives scammers a platform to exploit a lot of people.
     """,
     'projectOverview_4': """
 That realization was the spark for this project. While we only experience the slick, two-second front end of a digital payment, financial institutions are running a non-stop triage behind the scenes to separate legitimate transfers from scams.
 
 To explore how banks can tackle this, this project compares the effectiveness of `Logistic Regression`, `Decision Trees`, and `Random Forest` models in classifying fraudulent behavior using standard transactional data available to banks.
-    """ 
+    """,
+    'problemStatement': """
+    Every seamless “tap-and-go” transaction conceals months (and probably even years!) of infrastructure built to answer one question: **is this real, or is someone about to loose their hard-earned money?**
+
+In this dataset alone, fraud makes up just **0.13%** of over 6.3 million transactions; that’s roughly about **8,197 cases** buried among a sea of legitimate transfers. What’s worse is that it doesn't show up evenly either; fraud only appears in `TRANSFER` and `CASH_OUT` transactions, the exact kind of movement that mirrors sending money to a friend, paying rent, or, worse, an unverified scammer's account.
+
+This is the needle-in-a-haystack problem banks are up against. Flag too aggressively, and you're interrupting me buying some much-needed Mogu-mogu from the Ate at Lawson; flag too passively, and fraudulent transfers slip through the cracks, dressed up as an ordinary transaction, indistinguishable from the other **99.87%**.
+    """,
+    'businessObjective': """
+The goal of this project is to build and compare three models, `Logistic Regression`, `Decision Tree`, and `Random Forest`, that can reliably separate fraudulent transfers from legitimate ones using only the transactional data banks already have on hand (amount, balances before and after, transaction type).
+
+Accuracy is basically useless here (a model that predicts “:green[legitimate]” every single time would still be right 99.87% of the time), so the real objective isn’t a high accuracy score. It’s a model that:
+
+- Catches as many real fraud cases as possible (recall)
+
+- Without burying analysts in false alarms (precision)
+
+- Holds up under a heavily imbalanced dataset, judged through PR-AUC rather than accuracy alone.
+
+In short, this isn’t just about picking the “best” algorithm on paper. It’s about finding the model a bank could actually deploy, one that protects people’s money without flagging every legitimate :red[Kape Kuripot] run as a crime.
+    """
 }
 
