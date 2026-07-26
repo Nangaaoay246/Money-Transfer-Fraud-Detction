@@ -5,7 +5,7 @@ import pandas as pd
 
 def configure():
     st.set_page_config(
-         page_title='FraudWach: Money Transfer Fraud Detection',
+         page_title='FraudWatch: Money Transfer Fraud Detection',
             page_icon='🚨',
             initial_sidebar_state='expanded'
     ) 
