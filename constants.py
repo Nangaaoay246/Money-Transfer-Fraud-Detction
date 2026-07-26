@@ -78,8 +78,6 @@ In short, this isn’t just about picking the “best” algorithm on paper. It�
 - **`Precision` (of the fraud class)** - Out of everything we flagged as fraud, how many actually were?
 - **`F1-score`** - A single score that balances both Precision and Recall.
 - **`PR-AUC` (Average Precision)** - Measures overall model performance amidst heavy class imbalance
-
-**Precision-Recall Curve Comparison**
     """,
     'modelEvaluation_2':"""
 1. `Random Forest` is the clear winner, with a percision recall-curve of 0.947. It maintains high recall levels, catching allmost all fraudulent transaction without throwing many false alarms.
@@ -87,6 +85,11 @@ In short, this isn’t just about picking the “best” algorithm on paper. It�
     """,
     'modelEvaluation_3':"""
 3. `Logistic Regression` performs the poorest with a percision recall curve of 0.572; its curve drops sharply early on. This affirms our earlier hypothesis during EDA that linear models struggle to speparate frad from non-fraud.
+    """,
+    'datasetDescription': """
+This project runs on a synthetic mobile money dataset built to mimic real transaction logs while dodging the privacy nightmares that come with actual bank data. It packs **6,362,620** transactions across **11 columns**, simulated over **744 steps** (1 step = 1 simulated hour, so roughly a month of activity).
+
+Each row logs a single transfer: the type (`PAYMENT`, `TRANSFER`, `CASH_OUT`, `CASH_IN`, or `DEBIT`), the amount moved, and the sender's and receiver's account balances immediately before and after (`oldbalanceOrg`/`newbalanceOrig`, `oldbalanceDest`/`newbalanceDest`), plus the label we're actually after, isFraud. Identifier columns (`nameOrig`, `nameDest`) and a pre-existing flagging column (`isFlaggedFraud`) get dropped early on since they're either non-predictive or would leak the answer.   
     """
 }
 

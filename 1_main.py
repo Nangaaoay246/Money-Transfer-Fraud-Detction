@@ -1,6 +1,7 @@
 import streamlit as st
 from components.sidebar import sidebar
 from constants import page_content
+import pandas as pd
 
 def configure():
     st.set_page_config(
@@ -41,10 +42,24 @@ def businessObjective():
     st.header('Business Objective',  divider='green')
     st.markdown(page_content['businessObjective'])
 
+def datasetDescription():
+    st.header('Description of Dataset',  divider='green')
+    df_head = pd.read_csv('data/dataset_head.csv')
+    st.dataframe(df_head)
+    st.markdown(page_content['datasetDescription'])
+
 def modelEvaluation():
     st.header('Evaluation Metrics',  divider='green')
+    df_comparison = pd.read_csv('data/model_comparison.csv')
+    st.dataframe(df_comparison)
     st.markdown(page_content['modelEvaluation_1'])
-    #df
+
+
+def results():
+    st.header('Training Results',  divider='green')
+    df_comparison = pd.read_csv('data/model_comparison.csv')
+    st.dataframe(df_comparison)
+    
     col_img1, col_text1 = st.columns([1, 2], vertical_alignment="center")
     with col_img1:
             st.image('assets/PRAUC.png', width='stretch')
@@ -52,13 +67,13 @@ def modelEvaluation():
         st.markdown(page_content['modelEvaluation_2'])
     st.markdown(page_content['modelEvaluation_3'])
 
-
 def content():
     projectOverview()
     problemStatement()
     businessObjective()
-    #DatasetDescription
+    datasetDescription()
     modelEvaluation()
+    results()
     
 
 if __name__ == '__main__':
