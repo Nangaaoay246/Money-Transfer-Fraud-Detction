@@ -9,20 +9,14 @@ def configure():
             initial_sidebar_state='expanded'
     ) 
 
-def load_css():
-    st.markdown("""
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    """, unsafe_allow_html=True)
+def pages():
+    main_page = st.Page("1_main.py", title="Project Overview", icon="📒")
+    model_page = st.Page("2_model.py", title="Fraud Detection App", icon="🤖")
 
-    with open("styles.css") as f:
-        st.markdown(
-            f"<style>{f.read()}</style>",
-            unsafe_allow_html=True
-    )
+    return st.navigation([main_page, model_page])
+    
 
 if __name__ == '__main__':
 
     configure()
-    #load_css()
     sidebar()
