@@ -2,19 +2,6 @@ from constants import profile, links
 import streamlit as st
 
 def sidebar():
-    create_page = st.Page(
-        "1_main.py",
-        title="Create Entry",
-        icon=":material/add_circle:"
-    )
-
-    delete_page = st.Page(
-        "2_model.py",
-        title="Delete Entry",
-        icon=":material/delete:"
-    )
-
-    # Sidebar
     with st.sidebar:
         st.markdown(f"""
         <div style="text-align:center;">
@@ -37,13 +24,12 @@ def sidebar():
 
         social_links()
 
-    # Run the selected page
-    # Navigation
-    pg = st.navigation([create_page, delete_page])
-    pg.run()
-
-
 def social_links():
+    st.markdown(
+            '<link rel="stylesheet" '
+            'href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">',
+            unsafe_allow_html=True
+        )
     link_html = "".join(
         f"""
         <a href="{link['url']}" target="_blank"
@@ -56,7 +42,7 @@ def social_links():
 
     st.markdown(
         f"""
-        <div style="text-align:center; margin:2rem;">
+        <div style="text-align:center; margin:2rem; display: flex; flex-wrap:nowrap;">
             {link_html}
         </div>
         """,

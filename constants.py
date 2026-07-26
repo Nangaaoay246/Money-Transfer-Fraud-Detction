@@ -25,5 +25,10 @@ links = [
         "url": "https://scholar.google.com/citations?user=ttu2404AAAAJ&hl=en&authuser=2",
         "icon": "fab fa-google"
     },
+    {
+        "name": "Portfolio",
+        "url": "https://portfolio-nangaaoay.streamlit.app/",
+        "icon": "fab fa-at"
+    }
 ]
 
