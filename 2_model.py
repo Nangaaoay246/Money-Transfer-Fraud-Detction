@@ -72,10 +72,10 @@ def form():
             st.success("✅ This transaction is predicted to be :green[legitimate].")
 
 def header():
-    st.title('FraudWatch: Money Transfer Fraud Detection App')
+    st.title('🚨 FraudWatch: Money Transfer Fraud Detection App')
     st.markdown('Please enter the transaction details and use the prediction model')
     st.divider()
-    st.header("Transaction Details")
+    st.header("💵 Transaction Details")
 
 header()
 form()
