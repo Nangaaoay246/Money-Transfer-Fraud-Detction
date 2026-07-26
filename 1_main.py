@@ -41,10 +41,16 @@ def businessObjective():
     st.header('Business Objective',  divider='green')
     st.markdown(page_content['businessObjective'])
 
+def modelEvaluation():
+    st.header('Evaluation Metrics',  divider='green')
+    st.markdown(page_content['modelEvaluation'])
+
 def content():
     projectOverview()
     problemStatement()
     businessObjective()
+    #DatasetDescription
+    modelEvaluation()
     
 
 if __name__ == '__main__':
