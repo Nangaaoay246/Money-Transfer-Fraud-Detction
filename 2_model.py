@@ -77,6 +77,5 @@ def header():
     st.divider()
     st.header("Transaction Details")
 
-if __name__ == '__main__':
-    header()
-    form()
+header()
+form()

@@ -14,9 +14,17 @@ def pages():
     model_page = st.Page("2_model.py", title="Fraud Detection App", icon="🤖")
 
     return st.navigation([main_page, model_page])
-    
+
+def projectOverview():
+    st.title('Money Transfer Fraud Detection - Project Overview')
 
 if __name__ == '__main__':
-
     configure()
+    
+    main_page = st.Page(projectOverview, title="Project Overview", icon="📒", default=True)
+    model_page = st.Page("2_model.py", title="Fraud Detection App", icon="🤖")
+
+    pg = st.navigation([main_page, model_page])
+
     sidebar()
+    pg.run()
