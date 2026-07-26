@@ -73,7 +73,6 @@ def form():
 
 def header():
     st.title('🚨 FraudWatch: Money Transfer Fraud Detection App')
-    st.markdown('Please enter the transaction details and use the prediction model')
     st.divider()
     st.header("💵 Transaction Details")
 
